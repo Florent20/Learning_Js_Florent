@@ -79,10 +79,10 @@ aside h1 {
 /* ---------- Navigation ------------- */
 aside nav ul {
     list-style: none;
-    padding: 0%;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: o.25rem;
+    gap: 1rem;
 }
 
 aside nav a {
@@ -95,4 +95,33 @@ aside nav a:hover {
     color: var(--clr-neutral-0);
 }
 
-/* Active badge on "Your Stage" */
+/* Active badge on "Your Stay" */
+aside nav a span {
+    display: inline-block;
+    background-color: var(--clr-sun-500);
+    color: var(--clr-neutral-900);
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.2rem;
+    margin-left: 0.9rem;
+}
+
+/* Weather widget */
+aside > div {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--clr-neutral-700);
+}
+
+aside > div p:first-child {
+    font-size: 0.75rem;
+    color: var(--clr-neutral-400);
+    margin-bottom: 0.25rem;
+}
+
+.weather-temp {font-size: 2rem;}
