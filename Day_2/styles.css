@@ -67,3 +67,32 @@ aside {
   color: var(--clr-neutral-100);
   padding: 2rem;
 }
+
+/* ---------- Maison Soleil ---------- */
+aside h1 {
+  font-family: var(--ff-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;  
+}
+
+/* ---------- Navigation ------------- */
+aside nav ul {
+    list-style: none;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: o.25rem;
+}
+
+aside nav a {
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+aside nav a:hover {
+    color: var(--clr-neutral-0);
+}
+
+/* Active badge on "Your Stage" */
