@@ -23,17 +23,17 @@
 <aside>
   <!-- Sidebar starts -->
 
-  <h1>Maison Soleil</h1>
+  <img src="images/logo.svg" alt="Mon Soleil">
 
   <!-- Guest navigation -->
 
   <nav>
     <ul>
-      <li><a href="#">Your stay <span>1</span></a></li>
-      <li><a href="#">The house</a></li>
-      <li><a href="#">Around town</a></li>
-      <li><a href="#">Breakfast</a></li>
-      <li><a href="#">Messages</a></li>
+      <li><a href="#"><img src="images/icon-bed.svg" alt="">Your stay <span>1</span></a></li>
+      <li><a href="#"><img src="images/icon-house.svg" alt="">The house</a></li>
+      <li><a href="#"><img src="images/icon-pin.svg" alt="">Around town</a></li>
+      <li><a href="#"><img src="images/icon-breakfast-outline.svg" alt="">Breakfast</a></li>
+      <li><a href="#"><img src="images/icon-mail.svg" alt="">Messages</a></li>
     </ul>
   </nav>
 
@@ -58,96 +58,133 @@
 <main>
   <!-- Main content starts -->
 <header>
-  <p>Booking · Confirmed</p>
-  <h1>Bienvenue, Florent.</h1>
+  <div>
+    <p>Booking · Confirmed</p>
+  <h1>Bienvenue, <em>Florent.</em></h1>
+  </div>  
   <div class="header-actions">
-  <button>Print receipt</button>
-  <button>Add to calendar</button>
+  <button class="btn-outline">Print receipt</button>
+  <button class="btn-filled">Add to calendar</button>
   </div>
 </header>
 
   <!-- Booking cards start -->
 <div>
- <!-- Receipt card -->
-<article>
-  <h2>Receipt</h2>
+ <!-- Receipt + host one -->
+<section class="booking-visual">
+
+<article class="receipt">
+<div class="receipt-top">
+  <div>  
+  <p class="receipt-label">Receipt</p>
+  <h2>Your stay</h2>
+  </div>
+  <div class="receipt-number">
   <p>№ MS-2026</p>
   <p>0421-AH</p>
+  </div>
+  </div>
 
-  <h3>Your stay</h3>
+<div class="date-grid">
+  <div>
+  <p class="small-label">Check in</p>
+  <p class="big-date">25 Apr</p>
+  <p class="small-text">Saturday · 15:00</p>
+  </div>  
 
-  <p>Check in</p>
-  <p>25 Apr</p>
-  <p>Saturday · 15:00</p>
+  <div>
+  <p class="small-label">Check out</p>
+  <p class="big-date">29 Apr</p>
+  <p class="small-text">Wednesday · 11:00</p>
+  </div>
+  </div>
 
-  <p>Check out</p>
-  <p>29 Apr</p>
-  <p>Wednesday · 11:00</p>
+<div class="cost-list">
+  <div><span>Room · La Garrigue · 4 nights</span><span>€ 620.00</span></div>
+  <div><span>Breakfast · 2 guests</span><span>€ 96.00</span></div>
+  <div><span>Tourist tax</span><span>€ 14.40</span></div>
+  </div>  
 
-  <p>Room · La Garrigue · 4 nights</p>
-  <p>€ 620.00</p>
-  <p>Breakfast · 2 guests</p>
-  <p>€ 96.00</p>
-  <p>Tourist tax</p>
-  <p>€ 14.40</p>
+<div class="total"> 
+  <span>Total paid</span>
+  <strong>€ 730.40</strong>
+  </div> 
 
-  <p>Total paid</p>
-  <p>€ 730.40</p>
-
+<div class="receipt-button">  
   <p>Paid · Wise · GBP</p>
+  <img src="images/icon-barcode.svg" alt="barcode" class="barcode">
+  </div>
 <!-- Barcode image -->
 </article>
 
-<article>
+<article class="host-note">
   <!-- Note from host card -->
-  <h2>Welcome</h2>
-  <p>A note from your host, Margaux.</p>
-  <p>We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
-  <p>Room</p>
-  <p>La Garrigue</p>
+   <img src="images/icon-sun.svg" alt="" class="host-sun">
+  <p class="host-label">Welcome card</p>
+  <p class="host-intro">A note from your host,</p>
+  <h2>Margaux.</h2>
+  <p class="host-message">We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
+  <p class="room-label">Room</p>
+  <p class="room-name">La Garrigue</p>
 
   <!-- Booking cards end -->
 </article>
-</div>
+</section>
 
+<p class="fan-label">✦ HOVER TO FAN ✦</p>
 
+  <!-- Information cards -->
 
+<section class="info-cards">
 
-  <!-- Guest info row starts -->
+<article class="info-card">
+    <!-- Arrival -->
+  <img src="images/icon-key.svg" alt="" class="info-icon">  
 
-<div>
- <!-- Arrival -->    
-<article>
+  <span class="card-number">01</span>
+
   <h2>Arrival</h2>
-  <p>01</p>
   <h3>Check-in from 15:00</h3>
-  <p>Sat, 25 April</p>
+  <p class="card-date">Sat, 25 April</p>
   <p>Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.
 </p>
 </article>
  
 <!-- Wifi -->
- <article>
+ <article class="info-card">
+    <img src="images/icon-wifi.svg" alt="" class="info-icon">
+
+    <span class="card-number">02</span>
+
     <h2>Wifi</h2>
-    <p>02</p>
     <h3>Le Soleil . Guest</h3>
-    <p>Password below</p>
-    <p>NETWORK</p>
-    <p>Le Soleil . Guest</p>
-    <p>PASSWORD</p>
-    <p>soleil . 2026</p>
+    <p class="password-label">Password below</p>
+
+    <div class="wifi-row">
+    <span>NETWORK</span>
+    <strong>Le Soleil . Guest</strong>
+    </div>
+
+    <div class="wifi-row">
+    <span>PASSWORD</span>
+    <strong>soleil . 2026</strong>
     <button>COPY</button>
+    </div>
  </article>
 
 <!-- Breakfast -->
-<article>
+<article class="info-card">
+  <img src="images/icon-breakfast.svg" alt="" class="info-icon">  
+
+  <span class="card-number">03</span>
+
   <h2>Breakfast</h2>
-  <p>03</p>
   <h3>Served 8 - 10:30</h3>
   <p>On the terrace</p>
   <p>Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
 </article> 
-</div>
+
+</section>
   
   <!-- Guest info row ends -->
 
