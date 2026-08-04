@@ -147,22 +147,21 @@ aside nav li:first-child a span {
 /* Weather Card */
 .weather-card {
   margin-top: auto;
-  padding: 1rem;
+  padding: 1.1rem 1.1rem 1rem;
   border-radius: 12px;
   background: #f4d66d;
   color: var(--clr-neutral-900);
-  width: 115%;
-  height: 16%;
   position: relative;
-  right: 1rem;
-  bottom: -9.5rem;
+  overflow: hidden;
 }
 
 /* Top line */
 .weather-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .weather-top p {
@@ -171,51 +170,47 @@ aside nav li:first-child a span {
   font-size: 0.58rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  position: relative;
-  bottom: 3rem;
 }
 
 .weather-icon {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  bottom: 1rem;
-  left: 1rem;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 64px;
+  height: 64px;
+  opacity: 0.9;
 }
 
 /* Temperature */
 .weather-temperature {
     display: flex;
     align-items: flex-start;
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     position: relative;
-    bottom: 5.5rem;
+    z-index: 1;
 }
 
 .weather-temperature span {
     font-family: var(--ff-heading);
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 400;
     line-height: 1;
 }
 
 .weather-temperature sup {
-    margin-top: 0.15rem;
+    margin-top: 0.2rem;
     font-family: var(--ff-heading);
-    font-size: 2.2rem;
-    position: relative;
-    bottom: 0.5rem;
+    font-size: 1.6rem;
 }
 
 /* Weather description */
 .weather-condition {
-    margin: 0.45rem 0 0;
+    margin: 0.4rem 0 0;
     font-family: var(--ff-body);
     font-size: 0.65rem;
     color: var(--clr-neutral-700);
     position: relative;
-    bottom: 6rem;
+    z-index: 1;
 }
 
 aside > div p:first-child {
@@ -237,11 +232,9 @@ aside > div p:last-child {
 
 /* Sidebar footer */
 aside footer {
-    margin-top: auto;
+    margin-top: 1.5rem;
     font-size: 0.7rem;
     color: var(--clr-neutral-600);
-    bottom: -3rem;
-    position: relative;
     border-top: 1px solid var(--clr-neutral-400);
     padding-top: 1rem;
 }
@@ -591,12 +584,12 @@ main header h1 em {
 
 
 .info-card h2 {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.6rem;
   font-family: var(--ff-mono);
   font-size: 0.7rem;
   font-weight: 600;
-  position: relative;
-  left: 2.8rem;
-  bottom: 2.4rem;
   text-transform: uppercase;
   letter-spacing: 0.08rem;
 }
@@ -669,14 +662,10 @@ main header h1 em {
 /* ================= ATTRIBUTION ================= */
 
 .attribution {
-  position: relative;
-  left: 63rem;
-  bottom: 0.25rem;
-  z-index: 10;
+  margin-top: 2rem;
+  padding: 1rem;
   font-size: 0.55rem;
   opacity: 0.55;
-  width: 120%;
-  
 }
 
 .attribution a {
@@ -715,7 +704,8 @@ aside nav a img {
 }
 
 .info-icon {
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     width: 1.2rem;
     height: 1.2rem;
     padding: 0.5rem;
@@ -738,31 +728,64 @@ aside nav a img {
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 1000px) {
+/* Tablet: narrow the sidebar, tighten spacing, keep the
+   two-column layout */
+@media (max-width: 1024px) {
   body {
-    grid-template-columns: 190px minmax(0, 1fr);
+    grid-template-columns: 220px 1fr;
+  }
+
+  aside {
+    padding: 1.5rem;
   }
 
   main {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.75rem;
   }
 
   .booking-visual {
-    grid-template-columns: 1fr 0.9fr;
+    width: 100%;
   }
 
-  .info-cards {
-    gap: 0.8rem;
+  .host-message {
+    max-width: 100%;
+  }
+
+  .weather-icon {
+    width: 48px;
+    height: 48px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .weather-top p {
+    max-width: 75%;
   }
 }
 
-@media (max-width: 780px) {
+/* Mobile: stack sidebar above content, single-column info
+   cards, cards stack instead of sitting side by side */
+@media (max-width: 768px) {
   body {
     display: block;
   }
 
   aside {
-    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--clr-neutral-200);
+  }
+
+  .weather-card {
+    margin-top: 1.5rem;
+  }
+
+  aside footer {
+    margin-top: 1.5rem;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 2rem 1.5rem;
   }
 
   main header {
@@ -775,15 +798,18 @@ aside nav a img {
     display: flex;
     flex-direction: column;
     min-height: auto;
+    width: 100%;
   }
 
   .receipt {
     width: 96%;
+    min-height: auto;
     transform: rotate(-1deg);
   }
 
   .host-note {
     width: 90%;
+    min-height: auto;
     margin: -1rem 0 0 auto;
     transform: rotate(2deg);
   }
@@ -791,6 +817,68 @@ aside nav a img {
   .info-cards {
     grid-template-columns: 1fr;
   }
+
+  .attribution {
+    text-align: center;
+  }
 }
 
+/* Small mobile: single-column dates, no card rotation,
+   tighter type/padding so nothing overflows */
+@media (max-width: 480px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
 
+  main header h1 {
+    font-size: 1.75rem;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .btn-outline,
+  .btn-filled {
+    flex: 1;
+    text-align: center;
+  }
+
+  .receipt,
+  .host-note {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+
+  .receipt {
+    padding: 1.25rem;
+  }
+
+  .host-note {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .date-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .receipt-top {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .receipt-number {
+    text-align: left;
+  }
+
+  .wifi-row {
+    flex-wrap: wrap;
+  }
+
+  .wifi-row strong {
+    margin-left: 0;
+  }
+}
