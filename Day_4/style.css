@@ -76,3 +76,41 @@ body {
   font-weight: 900;
 }
 
+.change {
+  color: var(--blue-700);
+  font-weight: 900;
+}
+
+.change:hover {
+  color: var(--gray-600);
+}
+
+.proceed {
+  background: var(--blue-700);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  position: relative;
+  bottom: 3rem;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.3);
+}
+
+.proceed:hover {
+  background-color: var(--gray-600);
+}
+
+.cancel {
+  background: none;
+  border: none;
+  font-weight: 900;
+  position: relative;
+  bottom: 2.6rem;
+  color: grey;
+}
+
+.cancel:hover {
+  color: var(--blue-700);
+}
+
