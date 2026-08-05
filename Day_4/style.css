@@ -114,3 +114,8 @@ body {
   color: var(--blue-700);
 }
 
+.attribution {
+  position: absolute;
+  bottom: -5.5rem;
+  right: 5rem;
+}
