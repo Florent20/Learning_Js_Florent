@@ -9,12 +9,16 @@
 --blue-950: hsl(223, 47%, 23%);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Red Hat Display', sans-serif;
   background-color: var(--blue-100);
   color: var(--blue-950);
   margin: 0;
-  padding: 0;
+  padding: 1.5rem;
     display: flex;
   justify-content: center;
   align-items: center;
@@ -23,99 +27,124 @@ body {
 
 .container {
   background-color: white;
-  border-radius: 1rem;
-  max-width: 400px;
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 405px;
+  overflow: hidden;
 }
 
 .image {
+  display: block;
   width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 
 .container .content {
-  padding: 2rem;
+  padding: 2.5rem 2.5rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  position: relative;
-  bottom: 1rem;
 }
 
 .content h1 {
   font-weight: 900;
-  font-size: 1.7rem;
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
 }
 
-.content p {
-  position: relative;
-  bottom: 2.5rem;
+.content > p {
+  margin: 0 auto 1.5rem;
+  max-width: 310px;
+  color: var(--gray-600);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .plan {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: var(--blue-50);
   padding: 1rem;
-  border-radius: 1rem;
-  position: relative;
-  bottom: 3.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 .plan-details {
-  align-items:center;
-  font-size: 0.8rem;
-  position: relative;
-  right: 2.5rem;
-  top: 2.4rem;
+  margin-left: 1rem;
+  text-align: left;
+  flex: 1;
+}
+
+.plan-details p {
+  margin: 0;
 }
 
 .plan-details p:first-child {
   font-weight: 900;
+  margin-bottom: 0.25rem;
+}
+
+.plan-details p:last-child {
+  color: var(--gray-600);
 }
 
 .change {
   color: var(--blue-700);
   font-weight: 900;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 .change:hover {
   color: var(--gray-600);
+  text-decoration: none;
 }
 
 .proceed {
+  width: 100%;
   background: var(--blue-700);
   color: white;
   border: none;
   padding: 1rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  position: relative;
-  bottom: 3rem;
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 12px 20px rgba(56, 41, 224, 0.25);
+  margin-bottom: 1.5rem;
 }
 
 .proceed:hover {
-  background-color: var(--gray-600);
+  background-color: hsl(245, 83%, 68%);
 }
 
 .cancel {
   background: none;
   border: none;
   font-weight: 900;
-  position: relative;
-  bottom: 2.6rem;
-  color: grey;
+  color: var(--gray-600);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .cancel:hover {
-  color: var(--blue-700);
+  color: var(--blue-950);
 }
 
 .attribution {
-  position: absolute;
-  bottom: -5.5rem;
-  right: 5rem;
+  position:fixed;
+  bottom: 10px;
+  left: 0rem;
+  right: 0rem;
+  font-size: 0.6875rem;
+  text-align: center;
 }
