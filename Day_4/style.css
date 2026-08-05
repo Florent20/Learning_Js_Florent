@@ -152,3 +152,54 @@ body {
   font-size: 0.6875rem;
   text-align: center;
 }
+
+/* Responsive */
+@media (max-width: 500px) {
+  body {
+    padding: 1.5rem;
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-size: 100% auto;
+  }
+
+  .container {
+    max-width: 327px;
+  }
+
+   .container .content {
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .content h1 {
+    font-size: 1.4rem;
+  }
+
+  .content > p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .plan {
+    padding: 0.9rem;
+  }
+
+  .plan-details {
+    margin-left: 0.8rem;
+  }
+
+  .plan-details p {
+    font-size: 0.85rem;
+  }
+
+  .change {
+    font-size: 0.8rem;
+  }
+
+  .proceed {
+    font-size: 0.85rem;
+  }
+
+  .attribution {
+    display: none;
+  }
+  
+}
