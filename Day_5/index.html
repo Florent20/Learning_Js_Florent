@@ -51,5 +51,34 @@
     <span class="row-label">A</span>
   </div>
 
+  <ul class="legend">
+    <li><span class="swatch"></span>Available</li>
+    <li><span class="swatch selected"></span>Selected</li>
+    <li><span class="swatch occupied"></span>Reserved</li>
+    <li><span class="swatch premium"></span>Premium</li>
+  </ul>
+
+  <section id="ticket-stub">
+    <div class="stub-main">
+        <p class="stub-eyebrow">Ticket</p>
+        <h3 class="stub-film">Guardians of Time</h3>
+        <p class="stub-meta">Room 3 &nbsp;·&nbsp; 7:30 PM &nbsp;·&nbsp; Today</p>
+
+        <ul id="stub-seats"></ul>
+
+        <div class="stub-total">
+            <span class="Total"></span>
+            <span id="stub-price">0&nbsp;FCFA</span>
+        </div>
+    </div>
+
+    <div class="stub-perforation" aria-hidden="true"></div>
+
+    <div class="stub-action">
+        <button id="btn-reserve">Reserve my seats</button>
+        <p id="status-message" role="status"></p>
+    </div>
+  </section>
+
 </body>
 </html>
