@@ -1,0 +1,17 @@
+:root {
+  --velvet-950: hsl(345, 45%, 7%);
+  --gold-500: hsl(38, 75%, 55%);
+  --ruby-600: hsl(350, 60%, 42%);
+  --screen-glow: hsl(200, 85%, 88%);
+  --ivory-100: hsl(40, 35%, 95%);
+  --ink-muted: hsl(345, 15%, 68%);
+  /* ...and a few numbered shades of each */
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
