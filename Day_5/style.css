@@ -1,11 +1,17 @@
 :root {
   --velvet-950: hsl(345, 45%, 7%);
+  --velvet-900: hsl(345, 40%, 11%);
+  --velvet-800: hsl(345, 32%, 16%);
+  --velvet-700: hsl(345, 24%, 24%);
+  --velvet-600: hsl(345, 18%, 34%);
   --gold-500: hsl(38, 75%, 55%);
+  --gold-300: hsl(42, 85%, 78%);
+  --gold-100: hsl(45, 90%, 92%);
   --ruby-600: hsl(350, 60%, 42%);
+  --ruby-700: hsl(350, 55%, 32%);
   --screen-glow: hsl(200, 85%, 88%);
   --ivory-100: hsl(40, 35%, 95%);
   --ink-muted: hsl(345, 15%, 68%);
-  /* ...and a few numbered shades of each */
 
   --font-display: 'Bebas Neue', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -15,3 +21,159 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  padding: 0 0 4rem;
+  font-family: var(--font-body);
+  background: radial-gradient(ellipse at top, hsl(345, 40%, 18%), var(--velvet-950) 70%);
+  color: var(--ivory-100);
+}
+
+.marquee-lights {
+  height: 6px;
+  max-width: 480px;
+  margin: 0 auto 0.75rem;
+  background-image: radial-gradient(circle, var(--gold-500) 2.5px, transparent 2.6px);
+  background-size: 22px 6px;
+  background-repeat: repeat-x;
+  animation: chase 1.4s linear infinite;
+}
+
+@keyframes chase {
+  from { background-position: 0 0; }
+  to { background-position: 22px 0; }
+}
+
+#marquee h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  color: var(--gold-300);
+  text-shadow: 0 0 18px hsla(38, 90%, 60%, 0.35);
+}
+
+#marquee h1 .dot { color: var(--ruby-600); margin: 0 0.35em; 
+}
+
+#cinema {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.film-strip {
+    height: 14px;
+    background-image: repeating-linear-gradient(
+    90deg, var(--velvet-700) 0 10px, transparent 10px 22px);
+    border-top: 2px solid var(--velvet-700);
+    border-bottom: 2px solid var(--velvet-700);
+}
+
+.now-showing {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    color: var(--gold-500);
+}
+
+.showtime {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.showtime dt {
+  color: var(--ink-muted);
+}
+
+.showtime dd {
+  font-family: var(--font-mono);
+  color: var(--gold-300);
+}
+
+.showtime div { text-align: center; 
+}
+
+#screen {
+  width: 88%;
+  height: 34px;
+  background: linear-gradient(180deg, var(--screen-glow), hsl(200, 60%, 70%));
+  border-radius: 50% 50% 4px 4px / 100% 100% 6px 6px;
+  box-shadow: 0 24px 45px -12px hsla(200, 90%, 75%, 0.55);
+}
+
+#seat-map{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.row-label {
+  width: 1.1rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.seat-block { display: flex; gap: 0.4rem; 
+}
+
+.aisle { width: 1.4rem;
+ }
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px 6px 3px 3px;
+  background: var(--velvet-700);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid var(--velvet-600);
+} 
+
+.row.premium .seat {
+  background: var(--velvet-800);
+  border-color: var(--gold-500);
+}
+
+.seat:hover:not(.occupied):not(.selected) {
+  transform: translateY(-2px);
+  background: var(--velvet-600);
+}
+
+.seat:focus-visible {
+  outline: 2px solid var(--gold-300);
+  outline-offset: 2px;
+}
+
+.seat.selected {
+  background: var(--gold-500);
+  box-shadow: 0 0 12px hsla(38, 90%, 60%, 0.65);
+  animation: glow-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px hsla(38, 90%, 60%, 0.5); }
+  50% { box-shadow: 0 0 16px hsla(38, 90%, 60%, 0.85); }
+}
+
+.seat.occupied {
+  background: repeating-linear-gradient(45deg, var(--ruby-700), var(--ruby-700) 4px, var(--ruby-600) 4px, var(--ruby-600) 8px);
+  cursor: not-allowed;
+}
+

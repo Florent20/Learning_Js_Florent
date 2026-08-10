@@ -12,11 +12,12 @@
 <body>
     <header id="marquee">
   <div class="marquee-lights" aria-hidden="true"></div>
-  <h1>Rex&nbsp;Palace<span class="dot">·</span>Cinéma</h1>
+  <h1>Flo&nbsp;Palace<span class="dot">·</span>Cinéma</h1>
   <p class="tagline">Choisissez vos places pour la séance</p>
   <div class="marquee-lights" aria-hidden="true"></div>
 </header>
 
+<main id="cinema">
   <section class="now-showing">
     <div>
         <p class="eyebrow">Now Showing</p>
@@ -26,30 +27,33 @@
     <dl class="showtime">
         <div><dt>Room</dt><dd>3</dd></div>
         <div><dt>Time</dt><dd>7:30 PM</dd></div>
-        div><dt>Date</dt><dd>Today</dd></div>
+        <div><dt>Date</dt><dd>Today</dd></div>
     </dl>
   </section>
 
   <div id="screen-wrap">
-    <div id="SCREEN"></div>
+    <div id="screen">SCREEN</div>
   </div>
 
+<div id="seat-map">
   <div class="row" data-row="A">
     <span class="row-label">A</span>
     <div class="seat-block">
-        <div class="seat" data-seat="A1" data-price="2000"></div>
-        <div class="seat" data-seat="A2" data-price="2000"></div>
-        <div class="seat occupied" data-seat="A3" data-price="2000"></div>
-        <div class="seat" data-seat="A4" data-price="2000"></div>
+      <div class="seat" data-seat="A1" data-price="2000"></div>
+      <div class="seat" data-seat="A2" data-price="2000"></div>
+      <div class="seat occupied" data-seat="A3" data-price="2000"></div>
+      <div class="seat" data-seat="A4" data-price="2000"></div>
     </div>
     <div class="aisle" aria-hidden="true"></div>
-    <div class="seat" data-seat="A5" data-price="2000"></div>
-    <div class="seat" data-seat="A6" data-price="2000"></div>
-    <div class="seat" data-seat="A7" data-price="2000"></div>
-    <div class="seat" data-seat="A8" data-price="2000"></div>
+    <div class="seat-block">
+      <div class="seat" data-seat="A5" data-price="2000"></div>
+      <div class="seat" data-seat="A6" data-price="2000"></div>
+      <div class="seat" data-seat="A7" data-price="2000"></div>
+      <div class="seat" data-seat="A8" data-price="2000"></div>
     </div>
     <span class="row-label">A</span>
   </div>
+</div>
 
   <ul class="legend">
     <li><span class="swatch"></span>Available</li>
@@ -67,7 +71,7 @@
         <ul id="stub-seats"></ul>
 
         <div class="stub-total">
-            <span class="Total"></span>
+            <span>Total</span>
             <span id="stub-price">0&nbsp;FCFA</span>
         </div>
     </div>
@@ -79,7 +83,7 @@
         <p id="status-message" role="status"></p>
     </div>
   </section>
-
-  <script></script>
+</main>
+  <script src="app.js"></script>
 </body>
 </html>
