@@ -1,52 +1,81 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+
+    min-height: 100vh;
+    padding: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    min-height: 100vh;
+    background-color: #f2f2f2;
 }
 
 .container {
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
+
+    padding: 35px;
+
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
+
+    border-radius: 12px;
+
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
+    margin-bottom: 25px;
+
     text-align: center;
-    margin-bottom: 20px;
+
+    font-size: 32px;
 }
 
 .input-box {
     display: flex;
     gap: 10px;
+
+    width: 100%;
 }
 
 input {
     flex: 1;
-    padding: 10px;
+    min-width: 0;
+
+    padding: 12px;
+
     border: 1px solid #ccc;
     border-radius: 5px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #4CAF50;
 }
 
 button {
-    padding: 10px 15px;
+    padding: 12px 18px;
+
     border: none;
     border-radius: 5px;
+
     background-color: #4CAF50;
+
     color: white;
+
     cursor: pointer;
+
+    font-size: 15px;
 }
 
 button:hover {
@@ -54,8 +83,11 @@ button:hover {
 }
 
 ul {
+    width: 100%;
+
+    margin-top: 25px;
+
     list-style: none;
-    margin-top: 20px;
 }
 
 li {
@@ -63,11 +95,25 @@ li {
     justify-content: space-between;
     align-items: center;
 
-    padding: 10px;
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 12px;
+
     margin-bottom: 10px;
 
     background-color: #f5f5f5;
+
     border-radius: 5px;
+
+    word-break: break-word;
+}
+
+li span {
+    flex: 1;
+
+    cursor: pointer;
 }
 
 .completed {
@@ -76,9 +122,116 @@ li {
 }
 
 .delete {
+    flex-shrink: 0;
+
     background-color: #e74c3c;
 }
 
 .delete:hover {
     background-color: #c0392b;
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 600px;
+
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================
+   MOBILE PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+
+        padding: 25px 20px;
+
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+
+        margin-bottom: 20px;
+    }
+
+    .input-box {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+
+        padding: 13px;
+    }
+
+    .input-box button {
+        width: 100%;
+    }
+
+    li {
+        align-items: flex-start;
+
+        padding: 10px;
+    }
+
+    .delete {
+        padding: 10px 12px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 320px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+    }
+
+    li {
+        font-size: 14px;
+    }
+
+    .delete {
+        padding: 8px 10px;
+    }
 }
