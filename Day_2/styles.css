@@ -290,7 +290,6 @@ main header h1 em {
   border-radius: 2rem;
   font-family: var(--ff-body);
   font-size: 0.72rem;
-  cursor: pointer;
   font-weight: 600;
 }
 
