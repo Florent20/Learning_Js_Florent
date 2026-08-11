@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
 
     min-height: 100vh;
+    padding: 20px;
 
     display: flex;
     justify-content: center;
@@ -17,41 +18,48 @@ body {
 }
 
 .game-container {
-    width: 400px;
+    width: 100%;
+    max-width: 450px;
 
-    padding: 30px;
+    padding: 35px;
 
     text-align: center;
 
     background-color: white;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
     margin-bottom: 15px;
+
+    font-size: 32px;
 }
 
 p {
     margin-bottom: 20px;
+
+    line-height: 1.5;
 }
 
 .input-box {
     display: flex;
     gap: 10px;
 
+    width: 100%;
+
     margin-bottom: 20px;
 }
 
 input {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
 
     padding: 12px;
 
     border: 1px solid #ccc;
-
     border-radius: 5px;
 
     font-size: 16px;
@@ -61,7 +69,6 @@ button {
     padding: 12px 18px;
 
     border: none;
-
     border-radius: 5px;
 
     background-color: #4CAF50;
@@ -77,17 +84,120 @@ button:hover {
     background-color: #45a049;
 }
 
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
 #message {
+    min-height: 24px;
+
     font-weight: bold;
-    min-height: 20px;
 }
 
 #restartBtn {
-    background-color: #333;
-
     margin-top: 10px;
+
+    background-color: #333;
 }
 
 #restartBtn:hover {
     background-color: #555;
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .game-container {
+        max-width: 500px;
+
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================
+   MOBILE PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .game-container {
+        width: 100%;
+
+        padding: 25px 20px;
+
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .input-box {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+
+        padding: 13px;
+    }
+
+    .input-box button {
+        width: 100%;
+    }
+
+    #restartBtn {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 320px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+    }
 }
